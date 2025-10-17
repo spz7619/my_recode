@@ -7,7 +7,7 @@ ctf write up
 ## 404
 
 대상 URL로 진입
-![img.png](404/img.png)
+![img.png](img.png)
 
 또 제공되는 app.py를 확인해보자
 ```jupyter
@@ -178,8 +178,8 @@ hashcat -m 0 401b0e20e4ccf7a8df254eac81e269a0 /path/to/rockyou.txt
 
 but 복호화 실패
 
-![img_1.png](404/img_1.png)
-![img_2.png](404/img_2.png)
+![img_1.png](img_1.png)
+![img_2.png](img_2.png)
 
 대상 내에는 계정 생성프로세스가 존재함. 계정생성 후 admin_jwt 발급 확인
 app.py 소스를 다시보면
@@ -233,26 +233,26 @@ ADMIN_JWT=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJGbGFnIiwicm9sZSI6ImFkb
 
 인증값 획득 가능
 
-![img_3.png](404/img_3.png)
+![img_3.png](img_3.png)
 cookie 값을 해당값으로 변조 후 /account 접근 시도
 
-![img_4.png](404/img_4.png)
+![img_4.png](img_4.png)
 Flag 유저로 접근 성공 !
 
-![img_5.png](404/img_5.png)
+![img_5.png](img_5.png)
 
 admin Panel 접근 시 템플릿 랜더 기능 확인
-![img_6.png](404/img_6.png)
+![img_6.png](img_6.png)
 
 노출되는 Werkzerg 서버를 보면 Python Flask 서버라는것을 알수있음(이미 소스를 받아서 확인가능)
 Jinja2 Flask 탬플릿 랜더링 유츄가능
 
 SSTI 취약점 확인 시도
-![img_8.png](404/img_8.png)
+![img_8.png](img_8.png)
 
 취약점 확인 후 Flag 추출 시도. flag.txt 경로는 app.py 내 존재함
 {{ self._TemplateReference__context.cycler.__init__.__globals__['__builtins__']['__import__']('os').popen('cat secret/flag.txt').read() }}
 
-![img_9.png](404/img_9.png)
+![img_9.png](img_9.png)
 
 문제해결!
