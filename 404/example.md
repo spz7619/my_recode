@@ -1,8 +1,4 @@
-# QnQsec Write Up
-
-## 1.1 404
-
-ctf write up
+# QnQsec CTF Write Up
 
 ## 404
 
