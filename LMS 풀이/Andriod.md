@@ -13,4 +13,12 @@ AndroidManifest.xml 파일을 분석하여 App 실행 시 처음으로 시작되
 
 ### 2번 문제
 
+App 분석 후 개발용 서버 주소에 접근하여 FLAG를 확인하세요.
 
+![img_1.png](img_1.png)
+
+string으로 http 검색 시 바로 확인가능
+
+![img_2.png](img_2.png)
+
+### 3번 문제
